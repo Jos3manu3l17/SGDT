@@ -1,24 +1,20 @@
-import { createHeader } from './app-header.js';
-import { createSidebar } from './app-sidebar.js';
+import { createHeader } from "./app-header.js";
+import { createSidebar } from "./app-sidebar.js";
 
-function createappLayout() {
+function createappLayout({ sectionTitle, navigationItems }) {
 
-    return ` <div class="app-layout"> 
-${createHeader()}
-${createSidebar()}
-    <main class="app-main"> Aca se encuentra el contenido principal </main> 
-    </div>`;
+    return ` <div class="app-layout">
+            ${createHeader(sectionTitle)}
+            ${createSidebar(navigationItems)}
+            <main class="app-main" </main> 
+            </div>`;
 }
 
-export function mountAppLayout (rootElement) {
+function handleLayaoutClick(event, layoutElement) {
+}
+export function mountAppLayout(rootElement, opciones) {
+    rootElement.innerHTML = createappLayout(opciones);
+    const LayoutElement = document.querySelector('.app-layout');
+    LayoutElement.addEventListener('click', (event) => (handleLayaoutClick(event, LayoutElement)))
 
-  
-rootElement.innerHTML = createappLayout();
-
-const LayoutElement = document.querySelector('.app-layout');
-
-
-LayoutElement.addEventListener('click', (event) => {
-    alert('click');
-})
 }
