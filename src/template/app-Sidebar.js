@@ -26,8 +26,9 @@ const navigationLinks = navigationItems.map(createNavegationLink).join("");
         <button type="button" class="app-sidebar__close-button" data-action="close-sidebar" aria-label="Cerrar menú"></button>
       </div>
       <nav aria-label="Secciones">
-        <ul class="app-sidebar__list"></ul>
+        <ul class="app-sidebar__list">
         ${navigationLinks}
+        </ul>
       </nav>
     </aside>
   `.trim();
