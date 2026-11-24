@@ -6,7 +6,7 @@ function createappLayout({ sectionTitle, navigationItems }) {
     return ` <div class="app-layout">
             ${createHeader(sectionTitle)}
             ${createSidebar(navigationItems)}
-            <main class="app-main" </main> 
+            <main class="app-main">Contenido main</main> 
             </div>`;
 }
 
